@@ -1,0 +1,85 @@
+/*
+Theme Name: 	Betheme Child
+Theme URI: 		http://themes.muffingroup.com/betheme
+Author: 		Muffin group
+Author URI: 	http://muffingroup.com
+Description:	Child Theme for Betheme - Premium WordPress Theme
+Template:		betheme
+Version: 		1.6
+*/
+
+/* Theme customization starts here
+-------------------------------------------------------------- */
+
+#Header_wrapper {
+  background-color: #444 !important;
+  background-position: center !important;
+  background-size: cover;
+}
+
+
+  body:not(.template-slider) #Header {
+    min-height: 575px !important;
+  }
+
+.fg-white { color: #fff; }
+  .fg-white h2, .fg-white h3, .fg-white h4, .the_content_wrapper .fg-white ul, .the_content_wrapper .fg-white ol, .fg-white td, .fg-white a { color: #fff; }
+  .fg-white a { text-decoration: underline; }
+
+.img-round-title,
+.img-round-title-sm {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0 auto;
+
+  border-radius: 150px;
+
+  overflow: hidden;
+}
+  .img-round-title-sm {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+
+.font-large {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 35px;
+}
+  .font-large h2 {
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+  .font-large .vc_btn3.vc_btn3-size-md {
+    font-size: 1em;
+  }
+
+.vc_btn3.vc_btn3-color-danger, .vc_btn3.vc_btn3-color-danger.vc_btn3-style-flat { background-color: #7f1917 !important; }
+
+
+@media screen and (max-width:599px) {
+  #Action_bar #social-menu { display: none; }
+
+  #Header_wrapper {
+    background-position: center 120px !important;
+    background-size: contain !important;
+  }
+    body:not(.template-slider) #Header {
+      min-height: 315px !important;
+    }
+}
+
+@media screen and (max-width:399px) {
+  #Action_bar #social-menu { display: none; }
+
+  #Header_wrapper {
+    background-position: center 120px !important;
+    background-size: contain !important;
+  }
+    body:not(.template-slider) #Header {
+      min-height: 300px !important;
+    }
+}
