@@ -1,0 +1,8 @@
+(function($) {
+	$(document).ready(function(){
+
+		//add target to the links with the "target_blank" class
+		$('a.target_blank').attr('target','_blank');
+
+	});
+})(jQuery);

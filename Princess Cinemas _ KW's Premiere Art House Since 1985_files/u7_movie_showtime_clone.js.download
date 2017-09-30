@@ -1,0 +1,23 @@
+function CloneLastShowtime(){
+	var counter = $('#field_movie_showtimes_ref_values tbody tr.draggable').length;
+	var realCounter = counter - 1;
+	var cloneShowtime = realCounter - 1;
+	var getCinema = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-cinema-value option:selected').val();
+	var getScreen = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-cinema-screen-value option:selected').val();
+	var gettheYear = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-showtime-0-value-year option:selected').val();
+	var gettheMonth = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-showtime-0-value-month option:selected').val();
+	var getday = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-showtime-0-value-day option:selected').val();
+	var gethour = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-showtime-0-value-hour option:selected').val();
+	var getMin = $('#edit-field-movie-showtimes-ref-'+cloneShowtime+'-node-widget-field-movie-showtime-0-value-minute option:selected').val();
+	//alert(counter);
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-cinema-value option[value='"+getCinema+"']").attr("selected", "selected");
+	
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-cinema-screen-value option[value='"+getScreen+"']").attr("selected", "selected");
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-showtime-0-value-year option[value='"+gettheYear+"']").attr("selected", "selected");
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-showtime-0-value-month option[value='"+gettheMonth+"']").attr("selected", "selected");
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-showtime-0-value-day option[value='"+getday+"']").attr("selected", "selected");
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-showtime-0-value-hour option[value='"+gethour+"']").attr("selected", "selected");
+	$("#edit-field-movie-showtimes-ref-"+realCounter+"-node-widget-field-movie-showtime-0-value-minute option[value='"+getMin+"']").attr("selected", "selected");
+	
+	
+}

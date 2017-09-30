@@ -1,0 +1,27 @@
+(function ($) {
+
+Drupal.AjaxLoad = Drupal.AjaxLoad || {};
+
+/**
+ * Load JavaScript and CSS files and data.
+ */
+Drupal.CTools.AJAX.commands.ajax_load = function (target, response) {
+  // if there are ctools commands/scripts/css/settings, respond to them
+  if (response && response.__commands) {
+    // push our behaviours
+    response.__commands.push({
+      command: 'ajax_load_complete',
+      target: response.target
+    });
+    Drupal.CTools.AJAX.respond(response.__commands);
+  }
+};
+
+/**
+ * When all scripts have loaded, attach behaviors.
+ */
+Drupal.CTools.AJAX.commands.ajax_load_complete = function(data) {
+    Drupal.attachBehaviors(data.target);
+};
+
+})(jQuery);

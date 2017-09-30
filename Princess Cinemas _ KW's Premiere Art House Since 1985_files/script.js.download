@@ -1,0 +1,11 @@
+  //inline preview
+  //imce.hooks.list.push(imce.thumbRow);
+  imce.vars.tMaxW = 120; //maximum width of an image to be previewed inline
+  imce.vars.tMaxH = 120; //maximum height of an image to be previewed inline
+  imce.vars.prvW = 80; //maximum width of the thumbnail used in inline preview.
+  imce.vars.prvH = 80; //maximum height of the thumbnail used in inline preview.
+  imce.vars.prvstyle = 'imce-thumbnail'; //preview larger images inline using an image style(imagecache preset).
+
+  //enable box view for file list. set box dimensions = preview dimensions + 30 or more
+  imce.vars.boxW = 100; //width of a file info box
+  imce.vars.boxH = 100; //height of a file info box

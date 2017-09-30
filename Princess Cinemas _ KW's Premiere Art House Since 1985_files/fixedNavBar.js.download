@@ -1,0 +1,68 @@
+function moveScroller() {
+    var move = function() {
+       var st = $(window).scrollTop() - $('#navbar-inner').height() + $('#block-superfish-1 .block-inner').height() + $('#block-menu-secondary-links').outerHeight();
+        var ot = $("#navbar").offset().top;
+        var s = $("#navbar-inner");
+        var l = $("#logo img");
+        var logo = $("#logo");
+        var sf = $('#block-superfish-1 .block-inner');
+        var height = $('#navbar-inner').height() - sf.height() - $('#block-menu-secondary-links').height();
+
+        //Check if we should add the custom favicon or the default one (from variable "mini-logo" from theme-settings.php)
+        var favLocation = '';
+
+        if (!Drupal.settings.u7.mini_logo) {
+          var hname = document.location.hostname;
+          
+          if(hname.indexOf("www.") >= 0) { hname = hname.replace('www.', ''); }
+            favLocation = "/sites/" + hname + "/themes/u7/customizations/images/mini-logo.png";
+        }
+        else {
+          favLocation = $('link[rel="shortcut icon"]')[0].href;
+        }
+        //// end ////
+
+        if(st >= ot) {
+            l.css({
+                display: "none",
+            });
+            logo.css({
+                background: "url(" + favLocation + ") no-repeat",
+                top: (sf.height() - 16) / 2,
+            });
+            logo.addClass('favicon-logo');
+            sf.addClass('favicon-space');
+            sf.css({
+               "padding-left": 16                
+            })
+            s.css({
+                position: "fixed",
+                top: -height,
+            });
+
+        } else {
+            if(st <= ot) {
+                s.css({
+                    position: "relative",
+                    top: ""
+                });
+                l.css({
+                   display: "block",
+                });
+                sf.css({
+                    "padding-left": 0                 
+                })
+                sf.removeClass('favicon-space');
+                logo.css({
+                    "background": "none",
+                    top: "",
+                });
+                logo.removeClass('favicon-logo');
+            }
+        }
+    };
+    if ( $('#navbar #block-superfish-1').size() ) {
+        $(window).scroll(move);
+        move();
+    }
+}
